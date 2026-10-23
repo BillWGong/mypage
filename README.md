@@ -25,7 +25,7 @@ npm run preview
 - `src/App.vue`：个人介绍、项目、近况、联系方式。
 - `src/style.css`：主题颜色、字体、布局和响应式样式。
 - `src/components/ThemeSwitcher.vue`：主题选择及本地保存。
-- `avatar-square.jpg`：页面使用的头像，由 Vite 打包。
+- `avatar.jpg`：页面使用的原始头像，由 Vite 打包并按原图比例显示。
 
 ## GitHub Pages
 

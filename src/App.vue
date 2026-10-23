@@ -1,5 +1,5 @@
 <script setup>
-import avatar from '../avatar-square.jpg'
+import avatar from '../avatar.jpg'
 import PageIcon from './components/PageIcon.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 
@@ -34,7 +34,7 @@ const links = [
     <main id="main" tabindex="-1">
       <section class="intro" aria-labelledby="intro-title">
         <div class="intro-heading">
-          <img class="avatar" :src="avatar" width="76" height="76" alt="BillW Gong" fetchpriority="high" />
+          <img class="avatar" :src="avatar" width="1078" height="1080" alt="BillW Gong" fetchpriority="high" />
           <div>
             <h1 id="intro-title">hi! i'm BillW<span class="title-dot">.</span></h1>
             <p class="subtitle">Developer & open-source enthusiast</p>
