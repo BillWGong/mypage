@@ -1,209 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BillW Gong</title>
-<meta name="description" content="BillW Gong — 14yo developer based in Shenzhen. Open source & self-media enthusiast.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-:root {
-    --serif-font: 'Spectral', Times, serif;
-    --dark-text-color: rgb(148, 148, 148);
-    --nice-div-color: rgb(249, 247, 246);
-    --bullet-color: rgb(184, 184, 184);
-    --link-color: #52525b;
-    --link-background-color: #9191a07f;
-    --background-color: #ffffff;
-    --border-background-color: #e0e0e0;
-    --code-background-color: rgb(245, 245, 245);
-    --color: black;
-    --hr-color: black;
-}
-
-* { box-sizing: border-box; }
-
-body {
-    background-color: var(--background-color);
-    font-family: var(--serif-font);
-    padding: 0;
-    margin: 0;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    text-align: left;
-    overflow: auto;
-    color: var(--color);
-}
-
-.container {
-    width: 65%;
-    max-width: 800px;
-    margin-top: 14vh;
-    position: relative;
-    z-index: 1;
-}
-
-h1 {
-    font-weight: 500;
-    font-size: 1.6em;
-    margin-bottom: 0.6em;
-}
-
-p { line-height: 1.65; margin: 0 0 1.1em 0; }
-
-a {
-    font-weight: 400;
-    text-decoration: none;
-    color: var(--link-color);
-    border-bottom: 0.1em solid var(--link-background-color);
-    transition: all 0.3s;
-}
-
-a:hover {
-    cursor: pointer;
-    border-bottom: 0.1em solid var(--color);
-    color: var(--color);
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-ul > li {
-    position: relative;
-    padding-left: 1.2em;
-    margin-bottom: 0.5em;
-    line-height: 1.55;
-}
-
-ul > li::before {
-    content: "•";
-    color: var(--bullet-color);
-    position: absolute;
-    left: 0;
-    top: 0.1em;
-    font-size: 30px;
-    line-height: 1;
-}
-
-.gray { color: var(--dark-text-color); }
-
-.header-row {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 0.9em;
-}
-
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--border-background-color);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    flex-shrink: 0;
-}
-
-.header-row h1 { margin-bottom: 0; }
-
-@media (max-width: 600px) {
-    .avatar { width: 76px; height: 76px; }
-    .header-row { gap: 16px; }
-}
-
-.nice-div {
-    background-color: var(--nice-div-color);
-    border: 1px solid var(--border-background-color);
-    border-radius: 10px;
-    padding: 4px 22px;
-    margin: 1.4em 0;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid var(--border-background-color);
-    margin: 2.2em 0;
-}
-
-.fade { animation: fadein 1.2s ease both; }
-@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-
-@media (max-width: 600px) {
-    .container { width: 80%; padding: 20px; margin-top: 25px; }
-    body { align-items: flex-start; }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --dark-text-color: #949494;
-        --nice-div-color: rgb(30, 30, 30);
-        --bullet-color: rgb(90, 90, 90);
-        --background-color: #121212;
-        --border-background-color: #3b3d3e;
-        --code-background-color: #242424;
-        --link-background-color: #6b6b6b;
-        --link-color: rgb(161, 161, 161);
-        --color: rgb(200, 200, 200);
-        --hr-color: dimgray;
-    }
-    body { background-color: var(--background-color); color: var(--color); }
-}
-</style>
-</head>
-<body>
-<div class="container fade">
-
-    <div class="header-row">
-        <img class="avatar" src="avatar.jpg" alt="BillW Gong">
-        <h1>hi! i'm BillW</h1>
-    </div>
-
-    <p>I'm <strong>BillW Gong</strong>, a 14-year-old developer based in <strong>Shenzhen, China</strong>. I got into programming through hackathons — as an early contributor at PolarisHackathon — and now build open-source tools for developers and creators.</p>
-
-    <div class="nice-div">
-        <ul>
-            <li> Stack: TypeScript · Astro · Cloudflare Workers · Node.js ·Python · web and more</li>
-            <li> Focus: developer tools · coding agents · automation</li>
-            <li> Location: Shenzhen,CHINA</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <p class="gray">things i've built</p>
-    <ul>
-        <li> <a href="https://github.com/BillWGong/contextlint">contextlint</a> — review coding-agent instructions with source evidence, conflict checks, and bilingual offline reports</li>
-    </ul>
-
-    <hr>
-
-    <p class="gray">now</p>
-    <ul>
-        <li>making contextlint smarter at catching stale and conflicting agent rules</li>
-        <li>building in public on 𝕏</li>
-        <li>lazzzzz'y dev fr...</li>
-    </ul>
-
-    <hr>
-
-    <p class="gray">find me</p>
-    <ul>
-        <li> <a href="https://github.com/BillWGong">github</a></li>
-        <li> <a href="https://x.com/yankaxh1207">𝕏</a></li>
-        <li>👆 follow me bc i loveu❤</li>
-        <li> <a href="mailto:banlangencn@gmail.com">email</a></li>
-        <li> <a href="https://ptb.discord.com/users/1257990809811161161">discord</a></li>
-    </ul>
-
-    <p class="gray" style="margin-top:3em;font-size:0.85em;">© 2026 BillW Gong  billw.top  </p>
-
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BillW Gong — a developer in Shenzhen, China. Building open-source tools for developers and creators." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fbfaf8" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+    <title>BillW Gong — developer & builder</title>
+    <script>
+      (() => {
+        let preference = 'system'
+        try { preference = localStorage.getItem('billw-theme') || 'system' } catch {}
+        const theme = preference === 'light' || preference === 'dark'
+          ? preference
+          : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
