@@ -77,6 +77,7 @@ h2 { padding-top: 2px; font-size: 17px; font-weight: 400; font-style: italic; co
 .project-link:hover svg { transform: translate(2px, -2px); color: var(--accent); }
 .project-description { margin-top: 10px; font-size: 17px; line-height: 1.65; color: var(--body); }
 .project-note { display: block; margin-top: 12px; font-size: 12px; font-family: system-ui, sans-serif; color: var(--muted); letter-spacing: .15px; }
+.project + .project { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
 .updates { list-style: none; color: var(--body); font-size: 17px; }
 .updates li { position: relative; padding-left: 17px; }
 .updates li + li { margin-top: 8px; }

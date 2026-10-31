@@ -22,6 +22,21 @@ const links = [
   { label: 'Email', href: 'mailto:banlangencn@gmail.com' },
   { label: 'Discord', href: 'https://discord.com/users/1257990809811161161' },
 ]
+
+const projects = [
+  {
+    name: 'contextlint',
+    href: 'https://github.com/BillWGong/contextlint',
+    description: 'A second pair of eyes for coding-agent instructions. Source evidence, conflict checks, and bilingual offline reports.',
+    note: 'Open source · Developer tooling',
+  },
+  {
+    name: 'dsh-go-mac',
+    href: 'https://github.com/BillWGong/dsh-go-mac',
+    description: 'A native macOS client for DeepSeek Harness — a port of DSH Go to Apple Silicon, keeping the Flutter UI and rewriting the platform layer in Swift.',
+    note: 'Open source · Flutter + Swift · AGPL-3.0',
+  },
+]
 </script>
 
 <template>
@@ -58,11 +73,13 @@ const links = [
       <section class="section-row" aria-labelledby="work-title">
         <h2 id="work-title">things i've built</h2>
         <div>
-          <a class="project-link" href="https://github.com/BillWGong/contextlint">
-            <span>contextlint</span><PageIcon name="external" />
-          </a>
-          <p class="project-description">A second pair of eyes for coding-agent instructions. Source evidence, conflict checks, and bilingual offline reports.</p>
-          <span class="project-note">Open source · Developer tooling</span>
+          <div v-for="project in projects" :key="project.name" class="project">
+            <a class="project-link" :href="project.href">
+              <span>{{ project.name }}</span><PageIcon name="external" />
+            </a>
+            <p class="project-description">{{ project.description }}</p>
+            <span class="project-note">{{ project.note }}</span>
+          </div>
         </div>
       </section>
 
