@@ -18,7 +18,7 @@ const updates = [
 const links = [
   { label: 'GitHub', href: 'https://github.com/BillWGong' },
   { label: '𝕏 / Twitter', href: 'https://x.com/yankaxh1207' },
-  { label: '知乎', href: 'https://www.zhihu.com/people/bnv-80' },
+  { label: 'Zhihu', href: 'https://www.zhihu.com/people/bnv-80' },
   { label: 'Email', href: 'mailto:banlangencn@gmail.com' },
   { label: 'Discord', href: 'https://discord.com/users/1257990809811161161' },
 ]
