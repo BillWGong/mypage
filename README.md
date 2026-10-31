@@ -27,10 +27,10 @@ npm run preview
 - `src/components/ThemeSwitcher.vue`：主题选择及本地保存。
 - `avatar.jpg`：页面使用的原始头像，由 Vite 打包并按原图比例显示。
 
-## GitHub Pages
+## 部署
 
-仓库已附带 `.github/workflows/deploy.yml`。首次发布前，在 GitHub 仓库 **Settings → Pages → Source** 选择 **GitHub Actions**。推送到 `main` 后会自动构建并发布。
+线上站点 <https://www.billw.top> 由 Vercel 托管，仓库关联 `main` 分支。推送到 `main` 后 Vercel 会自动执行 `npm run build` 并发布 `dist/`。
 
-工作流使用 Pages 返回的 `base_path`，同时支持项目路径 `/mypage/` 和已配置的自定义域名。其他托管平台默认使用 `/`；有子路径时通过 `VITE_BASE_PATH=/your-path/ npm run build` 指定。
+其他托管平台默认使用根路径 `/`；部署在子路径时通过 `VITE_BASE_PATH=/your-path/ npm run build` 指定。
 
-仅迁移代码不会自动更改 GitHub 上的 Pages 设置。
+仓库不再包含 GitHub Pages 工作流（该仓库未启用 Pages）。若以后想改用 GitHub Pages，需要在 **Settings → Pages → Source** 选择 **GitHub Actions**，并重新添加构建发布工作流。
