@@ -90,6 +90,16 @@ const projects = [
         </ul>
       </section>
 
+      <section class="section-row" aria-labelledby="github-title">
+        <h2 id="github-title">on github</h2>
+        <div>
+          <a class="gh-card" href="https://ghfind.com/u/billwgong?ref=badge">
+            <img class="gh-card-light" src="https://ghfind.com/api/card/mini/billwgong?theme=light&amp;lang=en" alt="GitHub Roast score card" width="440" height="200" loading="lazy" />
+            <img class="gh-card-dark" src="https://ghfind.com/api/card/mini/billwgong?theme=dark&amp;lang=en" alt="GitHub Roast score card" width="440" height="200" loading="lazy" />
+          </a>
+        </div>
+      </section>
+
       <section class="section-row contact-section" aria-labelledby="contact-title">
         <h2 id="contact-title">find me</h2>
         <div>

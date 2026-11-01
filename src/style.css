@@ -85,6 +85,11 @@ h2 { padding-top: 2px; font-size: 17px; font-weight: 400; font-style: italic; co
 .social-links { display: flex; flex-wrap: wrap; column-gap: 22px; row-gap: 8px; list-style: none; }
 .social-links a { display: inline-flex; align-items: center; gap: 4px; font-size: 17px; }
 .social-links svg { width: 12px; height: 12px; color: var(--muted); }
+.gh-card { display: inline-block; max-width: 100%; }
+.gh-card img { display: block; width: 440px; max-width: 100%; height: auto; }
+.gh-card .gh-card-dark { display: none; }
+html[data-theme='dark'] .gh-card .gh-card-light { display: none; }
+html[data-theme='dark'] .gh-card .gh-card-dark { display: block; }
 .contact-note { margin-top: 12px; font-size: 14px; font-style: italic; color: var(--muted); }
 .contact-note span { padding-left: 3px; color: var(--accent); }
 footer { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 22px; margin-top: 12px; font-size: 13px; color: var(--muted); }
