@@ -1,5 +1,6 @@
 <script setup>
-import avatar from '../avatar.jpg'
+import avatar1x from '../avatar-152.jpg'
+import avatar2x from '../avatar-304.jpg'
 import PageIcon from './components/PageIcon.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 
@@ -10,8 +11,8 @@ const facts = [
 ]
 
 const updates = [
+  'Shipping dsh-go-mac, a native macOS client for DeepSeek Harness.',
   'Making contextlint smarter at catching stale and conflicting agent rules.',
-  'Building in public on 𝕏.',
   "Being a lazzzzz’y dev, occasionally.",
 ]
 
@@ -25,16 +26,19 @@ const links = [
 
 const projects = [
   {
+    name: 'dsh-go-mac',
+    href: 'https://github.com/BillWGong/dsh-go-mac',
+    site: 'https://dsh.billw.top',
+    siteLabel: 'dsh.billw.top',
+    description: 'A native macOS client for DeepSeek Harness — same engine, zero migration, with live run views, notification approvals and native animations. Ported from DSH Go to Apple Silicon.',
+    note: 'Open source · Flutter + Swift · AGPL-3.0',
+    featured: true,
+  },
+  {
     name: 'contextlint',
     href: 'https://github.com/BillWGong/contextlint',
     description: 'A second pair of eyes for coding-agent instructions. Source evidence, conflict checks, and bilingual offline reports.',
     note: 'Open source · Developer tooling',
-  },
-  {
-    name: 'dsh-go-mac',
-    href: 'https://github.com/BillWGong/dsh-go-mac',
-    description: 'A native macOS client for DeepSeek Harness — a port of DSH Go to Apple Silicon, keeping the Flutter UI and rewriting the platform layer in Swift.',
-    note: 'Open source · Flutter + Swift · AGPL-3.0',
   },
 ]
 </script>
@@ -50,7 +54,7 @@ const projects = [
     <main id="main" tabindex="-1">
       <section class="intro" aria-labelledby="intro-title">
         <div class="intro-heading">
-          <img class="avatar" :src="avatar" width="1078" height="1080" alt="BillW Gong" fetchpriority="high" />
+          <img class="avatar" :src="avatar1x" :srcset="`${avatar1x} 1x, ${avatar2x} 2x`" width="152" height="152" alt="BillW Gong" fetchpriority="high" />
           <div>
             <h1 id="intro-title">hi! i'm BillW<span class="title-dot">.</span></h1>
             <p class="subtitle">Developer & open-source enthusiast</p>
@@ -73,11 +77,15 @@ const projects = [
       <section class="section-row" aria-labelledby="work-title">
         <h2 id="work-title">things i've built</h2>
         <div>
-          <div v-for="project in projects" :key="project.name" class="project">
+          <div v-for="project in projects" :key="project.name" class="project" :class="{ 'project-featured': project.featured }">
             <a class="project-link" :href="project.href">
               <span>{{ project.name }}</span><PageIcon name="external" />
             </a>
             <p class="project-description">{{ project.description }}</p>
+            <p v-if="project.site" class="project-links">
+              <a class="project-site" :href="project.site">{{ project.siteLabel }}<PageIcon name="external" /></a>
+              <a :href="project.href">GitHub<PageIcon name="external" /></a>
+            </p>
             <span class="project-note">{{ project.note }}</span>
           </div>
         </div>
@@ -108,7 +116,7 @@ const projects = [
               <a :href="link.href">{{ link.label }}<PageIcon name="external" /></a>
             </li>
           </ul>
-          <p class="contact-note">Building in public. Come say hi <span aria-label="love">♡</span></p>
+          <p class="contact-note">Building in public. Come say hi <span role="img" aria-label="love">♡</span></p>
         </div>
       </section>
     </main>

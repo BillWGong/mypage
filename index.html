@@ -3,9 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BillW Gong — a developer in Shenzhen, China. Building open-source tools for developers and creators." />
+    <meta name="description" content="BillW Gong — a developer in Shenzhen, China. Building dsh-go-mac, a native macOS client for DeepSeek Harness, and other open-source tools." />
+    <meta name="author" content="BillW Gong" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#fbfaf8" />
+    <link rel="canonical" href="https://www.billw.top/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BillW Gong" />
+    <meta property="og:title" content="BillW Gong — developer & builder" />
+    <meta property="og:description" content="A developer in Shenzhen, China. Building dsh-go-mac, a native macOS client for DeepSeek Harness, and other open-source tools." />
+    <meta property="og:url" content="https://www.billw.top/" />
+    <meta property="og:image" content="https://www.billw.top/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="BillW Gong — developer & builder" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BillW Gong — developer & builder" />
+    <meta name="twitter:description" content="A developer in Shenzhen, China. Building dsh-go-mac and other open-source tools." />
+    <meta name="twitter:image" content="https://www.billw.top/og.png" />
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +34,23 @@
           ? preference
           : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         document.documentElement.dataset.theme = theme
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#171816' : '#fbfaf8')
       })()
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "BillW Gong",
+        "url": "https://www.billw.top/",
+        "jobTitle": "Developer",
+        "description": "Developer in Shenzhen, China, building open-source tools for developers and creators.",
+        "sameAs": [
+          "https://github.com/BillWGong",
+          "https://x.com/yankaxh1207",
+          "https://www.zhihu.com/people/bnv-80"
+        ]
+      }
     </script>
   </head>
   <body>

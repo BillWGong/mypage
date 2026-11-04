@@ -22,10 +22,12 @@ npm run preview
 
 ## 修改内容
 
-- `src/App.vue`：个人介绍、项目、近况、联系方式。
+- `src/App.vue`：个人介绍、项目、近况、联系方式；项目列表在 `projects` 数组中，`featured: true` 为主推项目。
 - `src/style.css`：主题颜色、字体、布局和响应式样式。
 - `src/components/ThemeSwitcher.vue`：主题选择及本地保存。
-- `avatar.jpg`：页面使用的原始头像，由 Vite 打包并按原图比例显示。
+- `avatar.jpg`：原始头像；页面实际加载 `avatar-152.jpg` / `avatar-304.jpg`（按 1x/2x 裁切压缩，源图变更后需重新生成）。
+- `public/og.png`：1200×630 社交预览图（Open Graph / Twitter Card）。
+- `vercel.json`：静态资源长缓存与基础安全响应头。
 
 ## 部署
 
