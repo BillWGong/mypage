@@ -62,7 +62,7 @@ const projects = [
         </div>
 
         <div class="bio">
-          <p>I'm <strong>BillW Gong</strong>, a 14-year-old developer based in <strong>Shenzhen, China</strong>. I build open-source tools for developers and creators.</p>
+          <p>I'm <strong>BillW Gong</strong>, teenager and developer based in <strong>Shenzhen, China</strong>. I build open-source tools for developers and creators.</p>
           <p>I found my way into programming through hackathons, as an early contributor at <span class="quiet-emphasis">PolarisHackathon</span>. These days, I’m exploring better tools and small ideas on the web.</p>
         </div>
 
