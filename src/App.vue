@@ -134,17 +134,18 @@ const projects = [
     </blockquote>
   </div>
 </section>
-      ```html
+      
 <section class="section-row" aria-labelledby="statement-title">
   <h2 id="statement-title">statement on taiwan</h2>
   <div class="statement" lang="en">
-    <p class="statement-lead">I am a citizen of the People's Republic of China. I make no statement on the political status or sovereignty of Taiwan.</p>
+    <p class="statement-lead">I make no statement on the political status or sovereignty of Taiwan.</p>
+    <p>I am a citizen of the People's Republic of China. </p>
     <p>As an individual, I do not wish to express a position on the political status, sovereignty, or future of Taiwan. I make no endorsement of any particular political position or claim.</p>
     <p>I believe that differences in political views should not become grounds for hostility, discrimination, or the denial of individual dignity. Every person deserves to be treated with respect, regardless of their background or political beliefs.</p>
     <p>This statement is not an endorsement of any political position. It simply reflects my personal decision to remain neutral on this matter.</p>
   </div>
 </section>
-```
+
     </main>
 
     <footer>
