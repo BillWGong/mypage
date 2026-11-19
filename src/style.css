@@ -97,6 +97,13 @@ html[data-theme='dark'] .gh-card .gh-card-light { display: none; }
 html[data-theme='dark'] .gh-card .gh-card-dark { display: block; }
 .contact-note { margin-top: 12px; font-size: 14px; font-style: italic; color: var(--muted); }
 .contact-note span { padding-left: 3px; color: var(--accent); }
+.statement { color: var(--body); font-size: 17px; line-height: 1.75; }
+.statement p + p { margin-top: 15px; }
+.statement-lead { font-size: 20px; font-weight: 600; line-height: 1.5; letter-spacing: -.2px; color: var(--text); }
+.statement a { color: var(--accent); text-decoration-color: currentColor; }
+.statement-prayer { margin: 24px 0 0; padding: 18px 22px; background: var(--surface); border-left: 2px solid var(--accent); border-radius: 0 6px 6px 0; }
+.statement-prayer p { font-style: italic; }
+.statement-prayer p:last-child { margin-top: 10px; font-style: normal; font-weight: 600; color: var(--text); }
 footer { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 22px; margin-top: 12px; font-size: 13px; color: var(--muted); }
 footer a { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; }
 footer svg { width: 12px; height: 12px; }
@@ -116,6 +123,9 @@ footer svg { width: 12px; height: 12px; }
   h2 { font-size: 17px; padding-top: 0; }
   .project-link { font-size: 23px; }
   .social-links { column-gap: 20px; }
+  .statement { font-size: 16px; }
+  .statement-lead { font-size: 18px; }
+  .statement-prayer { padding: 16px 18px; }
   footer { margin-top: 4px; }
 }
 

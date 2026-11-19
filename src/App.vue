@@ -119,6 +119,21 @@ const projects = [
           <p class="contact-note">Building in public. Come say hi <span role="img" aria-label="love">♡</span></p>
         </div>
       </section>
+
+      <section class="section-row" aria-labelledby="statement-title">
+        <h2 id="statement-title">stand with ukraine</h2>
+        <div class="statement" lang="zh-CN">
+          <p class="statement-lead">坚定地支持乌克兰。</p>
+          <p>我们反对一切形式的侵略与战争，反对以任何理由为战争辩护，更反对将暴力包装成正义。</p>
+          <p>我们坚信，生命与自由属于每一个独立的个体。任何国家、组织或个人，都无权以集体意志为名，任意剥夺他人的生命、自由与尊严。</p>
+          <p>我们支持乌克兰人民捍卫自己的国家、家园与自由，也呼吁每一位尊重生命、向往自由的人，为乌克兰的人道主义事业提供力所能及的帮助。</p>
+          <p>我们鼓励读者通过（<a href="https://redcross.org.ua/en/donate/">乌克兰红十字会</a>）了解并参与人道主义捐助。</p>
+          <blockquote class="statement-prayer">
+            <p>Ni preĝas por libereco, ni preĝas por paco.</p>
+            <p>我们为自由祈祷，我们为和平祈祷。</p>
+          </blockquote>
+        </div>
+      </section>
     </main>
 
     <footer>
