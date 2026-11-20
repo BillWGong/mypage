@@ -2,12 +2,15 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import PageIcon from './PageIcon.vue'
 
-const preference = ref('system')
 const choices = [
   { value: 'light', icon: 'sun', label: 'Light theme' },
   { value: 'dark', icon: 'moon', label: 'Dark theme' },
   { value: 'system', icon: 'system', label: 'Use system theme' },
 ]
+const stored = (() => {
+  try { return localStorage.getItem('billw-theme') } catch { return null }
+})()
+const preference = ref(choices.some(choice => choice.value === stored) ? stored : 'system')
 let media
 
 function applyTheme() {
@@ -26,10 +29,6 @@ function setTheme(value) {
 
 onMounted(() => {
   media = window.matchMedia('(prefers-color-scheme: dark)')
-  try {
-    const saved = localStorage.getItem('billw-theme')
-    if (choices.some(choice => choice.value === saved)) preference.value = saved
-  } catch {}
   media.addEventListener('change', applyTheme)
   applyTheme()
 })
@@ -38,7 +37,7 @@ onUnmounted(() => media?.removeEventListener('change', applyTheme))
 </script>
 
 <template>
-  <div class="theme-switcher" role="group" aria-label="Color theme">
+  <div class="theme-switcher" :class="`choice-${preference}`" role="group" aria-label="Color theme">
     <button v-for="choice in choices" :key="choice.value" type="button" :aria-label="choice.label" :title="choice.label" :aria-pressed="preference === choice.value" @click="setTheme(choice.value)">
       <PageIcon :name="choice.icon" />
     </button>

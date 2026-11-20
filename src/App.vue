@@ -101,9 +101,9 @@ const projects = [
       <section class="section-row" aria-labelledby="github-title">
         <h2 id="github-title">on github</h2>
         <div>
-          <a class="gh-card" href="https://ghfind.com/u/billwgong?ref=badge">
-            <img class="gh-card-light" src="https://ghfind.com/api/card/mini/billwgong?theme=light&amp;lang=en" alt="GitHub Roast score card" width="440" height="200" loading="lazy" />
-            <img class="gh-card-dark" src="https://ghfind.com/api/card/mini/billwgong?theme=dark&amp;lang=en" alt="GitHub Roast score card" width="440" height="200" loading="lazy" />
+          <a class="gh-card" href="https://ghfind.com/u/billwgong?ref=badge" aria-label="GitHub Roast score card">
+            <img class="gh-card-light" src="https://ghfind.com/api/card/mini/billwgong?theme=light&amp;lang=en" alt="" width="440" height="200" loading="lazy" />
+            <img class="gh-card-dark" src="https://ghfind.com/api/card/mini/billwgong?theme=dark&amp;lang=en" alt="" width="440" height="200" loading="lazy" />
           </a>
         </div>
       </section>
@@ -120,32 +120,31 @@ const projects = [
         </div>
       </section>
 
-     <section class="section-row" aria-labelledby="statement-title">
-  <h2 id="statement-title">stand with ukraine</h2>
-  <div class="statement" lang="en">
-    <p class="statement-lead">Stand firmly with Ukraine.</p>
-    <p>We oppose all forms of aggression and war, oppose justifying war for any reason, and especially oppose packaging violence as justice.</p>
-    <p>We firmly believe that life and freedom belong to every independent individual. No country, organization, or individual has the right to arbitrarily deprive others of their lives, freedom, and dignity in the name of collective will.</p>
-    <p>We support the Ukrainian people in defending their country, homes, and freedom, and we call on everyone who respects life and yearns for freedom to provide assistance within their means to humanitarian efforts in Ukraine.</p>
-    <p>We encourage readers to learn about and participate in humanitarian donations through the (<a href="https://redcross.org.ua/en/donate/">Ukrainian Red Cross</a>).</p>
-    <blockquote class="statement-prayer">
-      <p lang="eo">Ni preĝas por libereco, ni preĝas por paco.</p>
-      <p>We pray for freedom, we pray for peace.</p>
-    </blockquote>
-  </div>
-</section>
-      
-<section class="section-row" aria-labelledby="statement-title">
-  <h2 id="statement-title">statement on taiwan</h2>
-  <div class="statement" lang="en">
-    <p class="statement-lead">I make no statement on the political status or sovereignty of Taiwan.</p>
-    <p>I am a citizen of the People's Republic of China. </p>
-    <p>As an individual, I do not wish to express a position on the political status, sovereignty, or future of Taiwan. I make no endorsement of any particular political position or claim.</p>
-    <p>I believe that differences in political views should not become grounds for hostility, discrimination, or the denial of individual dignity. Every person deserves to be treated with respect, regardless of their background or political beliefs.</p>
-    <p>This statement is not an endorsement of any political position. It simply reflects my personal decision to remain neutral on this matter.</p>
-  </div>
-</section>
+      <section class="section-row" aria-labelledby="statement-title">
+        <h2 id="statement-title">stand with ukraine</h2>
+        <div class="statement" lang="en">
+          <p class="statement-lead">Stand firmly with Ukraine.</p>
+          <p>We oppose all forms of aggression and war, oppose justifying war for any reason, and especially oppose packaging violence as justice.</p>
+          <p>We firmly believe that life and freedom belong to every independent individual. No country, organization, or individual has the right to arbitrarily deprive others of their lives, freedom, and dignity in the name of collective will.</p>
+          <p>We support the Ukrainian people in defending their country, homes, and freedom, and we call on everyone who respects life and yearns for freedom to provide assistance within their means to humanitarian efforts in Ukraine.</p>
+          <p>We encourage readers to learn about and participate in humanitarian donations through the (<a href="https://redcross.org.ua/en/donate/">Ukrainian Red Cross</a>).</p>
+          <blockquote class="statement-prayer">
+            <p lang="eo">Ni preĝas por libereco, ni preĝas por paco.</p>
+            <p>We pray for freedom, we pray for peace.</p>
+          </blockquote>
+        </div>
+      </section>
 
+      <section class="section-row" aria-labelledby="taiwan-title">
+        <h2 id="taiwan-title">statement on taiwan</h2>
+        <div class="statement" lang="en">
+          <p class="statement-lead">I make no statement on the political status or sovereignty of Taiwan.</p>
+          <p>I am a citizen of the People's Republic of China.</p>
+          <p>As an individual, I do not wish to express a position on the political status, sovereignty, or future of Taiwan. I make no endorsement of any particular political position or claim.</p>
+          <p>I believe that differences in political views should not become grounds for hostility, discrimination, or the denial of individual dignity. Every person deserves to be treated with respect, regardless of their background or political beliefs.</p>
+          <p>This statement is not an endorsement of any political position. It simply reflects my personal decision to remain neutral on this matter.</p>
+        </div>
+      </section>
     </main>
 
     <footer>
