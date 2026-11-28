@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted, onUnmounted } from 'vue'
 import avatar1x from '../avatar-152.jpg'
 import avatar2x from '../avatar-304.jpg'
 import PageIcon from './components/PageIcon.vue'
@@ -41,6 +42,30 @@ const projects = [
     note: 'Open source · Developer tooling',
   },
 ]
+
+let revealObserver = null
+
+onMounted(() => {
+  const targets = document.querySelectorAll('[data-reveal]')
+  if (!targets.length) return
+
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
+  if (reduceMotion || !('IntersectionObserver' in window)) return
+
+  document.documentElement.classList.add('reveal-ready')
+
+  revealObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue
+      entry.target.classList.add('is-visible')
+      revealObserver.unobserve(entry.target)
+    }
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.1 })
+
+  targets.forEach(target => revealObserver.observe(target))
+})
+
+onUnmounted(() => revealObserver?.disconnect())
 </script>
 
 <template>
@@ -53,11 +78,13 @@ const projects = [
 
     <main id="main" tabindex="-1">
       <section class="intro" aria-labelledby="intro-title">
-        <div class="intro-heading">
-          <img class="avatar" :src="avatar1x" :srcset="`${avatar1x} 1x, ${avatar2x} 2x`" width="152" height="152" alt="BillW Gong" fetchpriority="high" />
-          <div>
-            <h1 id="intro-title">hi! i'm BillW<span class="title-dot">.</span></h1>
+        <div class="intro-hero">
+          <div class="intro-copy">
             <p class="subtitle">Developer & open-source enthusiast</p>
+            <h1 id="intro-title">hi! i'm <span class="hero-name">BillW<span class="title-dot">.</span></span></h1>
+          </div>
+          <div class="portrait">
+            <img class="avatar" :src="avatar1x" :srcset="`${avatar1x} 1x, ${avatar2x} 2x`" width="152" height="152" alt="BillW Gong" fetchpriority="high" />
           </div>
         </div>
 
@@ -74,33 +101,41 @@ const projects = [
         </dl>
       </section>
 
-      <section class="section-row" aria-labelledby="work-title">
+      <section class="section-row" aria-labelledby="work-title" data-reveal>
         <h2 id="work-title">things i've built</h2>
-        <div>
-          <div v-for="project in projects" :key="project.name" class="project" :class="{ 'project-featured': project.featured }">
-            <a class="project-link" :href="project.href">
-              <span>{{ project.name }}</span><PageIcon name="external" />
-            </a>
-            <p class="project-description">{{ project.description }}</p>
-            <p v-if="project.site" class="project-links">
-              <a class="project-site" :href="project.site">{{ project.siteLabel }}<PageIcon name="external" /></a>
-              <a :href="project.href">GitHub<PageIcon name="external" /></a>
-            </p>
-            <span class="project-note">{{ project.note }}</span>
+        <div class="section-content">
+          <div class="project-list">
+            <article v-for="(project, index) in projects" :key="project.name" class="project" :class="{ 'project-featured': project.featured }" data-reveal :style="{ '--reveal-delay': `${index * 80}ms` }">
+              <a class="project-link" :href="project.href">
+                <span>{{ project.name }}</span><PageIcon name="external" />
+              </a>
+              <div class="project-body">
+                <p class="project-description">{{ project.description }}</p>
+                <div class="project-meta">
+                  <p v-if="project.site" class="project-links">
+                    <a class="project-site" :href="project.site">{{ project.siteLabel }}<PageIcon name="external" /></a>
+                    <a :href="project.href">GitHub<PageIcon name="external" /></a>
+                  </p>
+                  <span class="project-note">{{ project.note }}</span>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section-row" aria-labelledby="now-title">
+      <section class="section-row" aria-labelledby="now-title" data-reveal>
         <h2 id="now-title">now</h2>
-        <ul class="updates">
-          <li v-for="update in updates" :key="update">{{ update }}</li>
-        </ul>
+        <div class="section-content">
+          <ul class="updates">
+            <li v-for="(update, index) in updates" :key="update" data-reveal :style="{ '--reveal-delay': `${index * 70}ms` }">{{ update }}</li>
+          </ul>
+        </div>
       </section>
 
-      <section class="section-row" aria-labelledby="github-title">
+      <section class="section-row" aria-labelledby="github-title" data-reveal>
         <h2 id="github-title">on github</h2>
-        <div>
+        <div class="section-content">
           <a class="gh-card" href="https://ghfind.com/u/billwgong?ref=badge" aria-label="GitHub Roast score card">
             <img class="gh-card-light" src="https://ghfind.com/api/card/mini/billwgong?theme=light&amp;lang=en" alt="" width="440" height="200" loading="lazy" />
             <img class="gh-card-dark" src="https://ghfind.com/api/card/mini/billwgong?theme=dark&amp;lang=en" alt="" width="440" height="200" loading="lazy" />
@@ -108,11 +143,11 @@ const projects = [
         </div>
       </section>
 
-      <section class="section-row contact-section" aria-labelledby="contact-title">
+      <section class="section-row contact-section" aria-labelledby="contact-title" data-reveal>
         <h2 id="contact-title">find me</h2>
-        <div>
+        <div class="section-content">
           <ul class="social-links">
-            <li v-for="link in links" :key="link.label">
+            <li v-for="(link, index) in links" :key="link.label" data-reveal :style="{ '--reveal-delay': `${index * 50}ms` }">
               <a :href="link.href">{{ link.label }}<PageIcon name="external" /></a>
             </li>
           </ul>
@@ -120,9 +155,9 @@ const projects = [
         </div>
       </section>
 
-      <section class="section-row" aria-labelledby="statement-title">
+      <section class="section-row" aria-labelledby="statement-title" data-reveal>
         <h2 id="statement-title">stand with ukraine</h2>
-        <div class="statement" lang="en">
+        <div class="section-content statement" lang="en">
           <p class="statement-lead">Stand firmly with Ukraine.</p>
           <p>We oppose all forms of aggression and war, oppose justifying war for any reason, and especially oppose packaging violence as justice.</p>
           <p>We firmly believe that life and freedom belong to every independent individual. No country, organization, or individual has the right to arbitrarily deprive others of their lives, freedom, and dignity in the name of collective will.</p>
@@ -135,9 +170,9 @@ const projects = [
         </div>
       </section>
 
-      <section class="section-row" aria-labelledby="taiwan-title">
+      <section class="section-row" aria-labelledby="taiwan-title" data-reveal>
         <h2 id="taiwan-title">statement on taiwan</h2>
-        <div class="statement" lang="en">
+        <div class="section-content statement" lang="en">
           <p class="statement-lead">I make no statement on the political status or sovereignty of Taiwan.</p>
           <p>I am a citizen of the People's Republic of China.</p>
           <p>As an individual, I do not wish to express a position on the political status, sovereignty, or future of Taiwan. I make no endorsement of any particular political position or claim.</p>
@@ -148,8 +183,11 @@ const projects = [
     </main>
 
     <footer>
-      <span>© {{ new Date().getFullYear() }} BillW Gong</span>
-      <a href="https://billw.top">billw.top<PageIcon name="external" /></a>
+      <span class="footer-mark" aria-hidden="true">billw.</span>
+      <div class="footer-row">
+        <span>© {{ new Date().getFullYear() }} BillW Gong</span>
+        <a href="https://billw.top">billw.top<PageIcon name="external" /></a>
+      </div>
     </footer>
   </div>
 </template>
